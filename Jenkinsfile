@@ -4,15 +4,11 @@ agent {
     node {
       label 'master'
     }
-    node {
-        stage('SCM') {
-            checkout scm
-        }
-    }
+  }
   
       tools {
         jdk 'jdk-8.221'
-        maven 'default maven'
+        maven 'maven-3.8.1'
     }
     
     stages {
@@ -46,7 +42,6 @@ agent {
                 echo  'Stage3 '
             }
             
-        }
-        
+        }           
     }
 }
