@@ -34,20 +34,7 @@ agent {
             }
             
         }
-        stage('SonarQube Analysis') {
-      environment {
-        SCANNER_HOME = tool 'sonar_scanner'
-        ORGANIZATION = "sonar_scanner"
-        PROJECT_NAME = "sonar_scanner"
-      }
-      steps {
-        withSonarQubeEnv('sonarqube') {
-            sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.organization=$ORGANIZATION \
-            -Dsonar.projectKey=$PROJECT_NAME \
-            -Dsonar.sources=.'''
-        }
-      }
-    }
+        
         
         stage('Stage 3') {
             steps {
