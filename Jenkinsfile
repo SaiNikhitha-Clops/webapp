@@ -4,12 +4,8 @@ agent {
     node {
       label 'master'
     }
-    node {
-       stage('SCM') {
-         checkout scm
-       }
-    }
-  }
+    
+}
   
       tools {
         jdk 'jdk-8.221'
