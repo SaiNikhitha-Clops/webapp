@@ -4,6 +4,11 @@ agent {
     node {
       label 'master'
     }
+    node {
+       stage('SCM') {
+         checkout scm
+       }
+    }
   }
   
       tools {
