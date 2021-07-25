@@ -4,12 +4,11 @@ agent {
     node {
       label 'master'
     }
-    
-}
+  }
   
       tools {
         jdk 'jdk-8.221'
-        maven 'default maven'
+        maven 'maven-3.8.1'
     }
     
     stages {
@@ -43,14 +42,6 @@ agent {
                 echo  'Stage3 '
             }
             
-        }
-        stage('SonarQube Analysis') {
-            steps{
-                def mvn = tool 'default maven';
-                withSonarQubeEnv() {
-                    sh "${mvn}/bin/mvn sonar:sonar"
-                }
-            }
-        }
+        }           
     }
 }
